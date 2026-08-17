@@ -33,6 +33,26 @@ import vueLogo from '../assets/vue.svg'
     </div>
   </section>
 
+  <section id="contact" class="contact">
+  <div class="contact-content">
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2>Looking for pet care?</h2>
+    <p>
+      I'm currently accepting inquiries through referrals.
+      Tell me a little about your pet and the dates you need.
+    </p>
+
+    <a
+      class="contact-button"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdw4_gwSZwrVYkGKaZ7D0YRWLKd08Fa4egbDOq5doVLUQmWNQ/viewform?usp=dialog"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Send an inquiry
+    </a>
+  </div>
+  </section>
+
   <div class="ticks"></div>
   <section id="spacer"></section>
 </template>

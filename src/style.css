@@ -80,6 +80,56 @@
   background: white;
 }
 
+
+.contact {
+  padding: 5rem 1.5rem;
+  background: #173b37;
+  color: white;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  margin: 0.5rem 0 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.contact-content > p:not(.eyebrow) {
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: white;
+  color: #173b37;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  background: #d7ebe4;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 3.5rem 1rem;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 @media (max-width: 600px) {
   .hero {
     min-height: 80svh;

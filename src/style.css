@@ -294,3 +294,86 @@ code {
     border-right-color: var(--border);
   }
 }
+
+
+.hero {
+  min-height: 85vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+
+  background-image:
+    linear-gradient(rgba(19, 33, 31, 0.35), rgba(19, 33, 31, 0.5)),
+    url('/pet-sitting-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.brand,
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.hero-button:hover {
+  background: white;
+  color: #173b37;
+}
+
+.availability {
+  padding: 5rem 1.5rem;
+  background: #f7f4ef;
+  color: #173b37;
+}
+
+.availability-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.availability h2 {
+  margin: 0.5rem 0 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.availability-content > p:not(.eyebrow) {
+  margin: 0 auto 2rem;
+  max-width: 620px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.calendar {
+  width: 100%;
+  border: 1px solid #c9c1b6;
+  background: white;
+}

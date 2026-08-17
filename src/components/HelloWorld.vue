@@ -30,21 +30,11 @@ const count = ref(0)
       <svg class="icon" role="presentation" aria-hidden="true">
         <use href="/icons.svg#documentation-icon"></use>
       </svg>
-      <h2>Insert Calendar Here</h2>
-      <p>Google api</p>
+      <h2>My Pet Sitting Availability</h2>
+      <p>View my current pet availabilty here!</p>
       <ul>
-        <li>
-          <a href="https://vite.dev/" target="_blank">
-            <img class="logo" :src="viteLogo" alt="" />
-            Explore Vite
-          </a>
-        </li>
-        <li>
-          <a href="https://vuejs.org/" target="_blank">
-            <img class="button-icon" :src="vueLogo" alt="" />
-            Learn more
-          </a>
-        </li>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=MGU5Mjc4OWY1N2I5MGViMGQyZDc1YmRjZTYxYTIyMjhhZTM3OWUzODU3Y2Q1M2ZlODQ1NzQ3OTdjZTY5M2E3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4&color=%23aca0bd" 
+        style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </ul>
     </div>
     <div id="social">

@@ -6,7 +6,7 @@
   <section class="hero">
     <div class="hero-content">
       <p class="brand">SOLO COMPANIONS</p>
-      <h1>Your pet’s best friend</h1>
+      <h1>Care that feels familiar.</h1>
     </div>
   </section>
 
@@ -26,6 +26,33 @@
           ></iframe>
         </div>
         
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-content">
+      <div class="about-heading">
+        <p class="eyebrow">ABOUT SOLO COMPANIONS</p>
+        <h2>Thoughtful pet care that keeps their routine close to home.</h2>
+      </div>
+
+      <div class="about-copy">
+        <p>
+          With many years of pet-sitting experience, I understand that choosing a sitter
+          means trusting someone with a member of your family.
+          I value building long-term
+          relationships with pets and their families, so every visit feels
+          familiar, consistent, and caring.
+        </p>
+
+        <p>
+          Every pet has their own routine, personality, and little ways of doing
+          things. I love learning the details—from a favorite walk route to the
+          quirks—because those are the things that help a pet feel most comfortable 
+          while their person is away.
+        </p>
+        
+      </div>
     </div>
   </section>
 

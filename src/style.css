@@ -204,4 +204,23 @@
   .calendar {
     height: 700px;
   }
+
+  .about {
+  padding: 3.5rem 1rem;
+}
+
+.about-content {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about h2 {
+  font-size: clamp(2.8rem, 14vw, 4rem);
+}
+
+.about-copy {
+  max-width: none;
+  font-size: 1rem;
+}
 }

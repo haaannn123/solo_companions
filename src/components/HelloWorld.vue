@@ -15,11 +15,6 @@
 
   const { events, isLoading, hasError } = useCalendarEvents()
 
-  const dateFormatter = new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'America/New_York',
-  })
 
   function localDate(date: string) {
     return new Date(`${date}T12:00:00`)
@@ -77,25 +72,6 @@
 
     return 'is-unavailable'
   }
-
-  const agendaGroups = computed(() => {
-    const groups = new Map<string, CalendarEvent[]>()
-
-    for (const event of events.value) {
-      const month = monthYearFormatter.format(getEventStart(event))
-
-      if (!groups.has(month)) {
-        groups.set(month, [])
-      }
-
-      groups.get(month)!.push(event)
-    }
-
-    return [...groups.entries()].map(([month, events]) => ({
-      month,
-      events,
-    }))
-  })
 </script>
 
 <template>

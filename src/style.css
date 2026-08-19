@@ -220,7 +220,16 @@ body {
   }
 
   .calendar {
-    height: 700px;
+    display: block;
+    width: 100%;
+  }
+
+  .calendar-frame {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
   }
 
   .about {

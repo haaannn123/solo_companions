@@ -2,6 +2,11 @@
   import { computed , ref } from 'vue'
 
   const mobileView = ref<'agenda' | 'calendar'>('agenda')
+  const showAllEvents = ref(false)
+
+  const visibleEvents = computed(() =>
+    showAllEvents.value ? events.value : events.value.slice(0, 6),
+  )
 
   import {
     useCalendarEvents,
@@ -167,7 +172,7 @@
           </p>
 
           <ul v-else class="agenda-list">
-            <li v-for="event in events" :key="event.id" class="agenda-card">
+            <li v-for="event in visibleEvents" :key="event.id" class="agenda-card">
               <div class="agenda-date-box">
                 <span class="agenda-date-month">
                   {{ getEventDateParts(event).month }}
@@ -191,6 +196,14 @@
               <!-- <span class="agenda-arrow" aria-hidden="true">›</span> -->
             </li>
           </ul>
+          <button
+            v-if="events.length > 6"
+            type="button"
+            class="view-later-button"
+            @click="showAllEvents = !showAllEvents"
+          >
+            {{ showAllEvents ? 'Show fewer dates' : 'View later dates' }}
+          </button>
         </div>
 
         <div v-else class="mobile-calendar-view">

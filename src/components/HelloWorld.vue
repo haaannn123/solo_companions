@@ -44,18 +44,6 @@
     return new Date(event.end.dateTime!)
   }
 
-  function formatEventDate(event: CalendarEvent) {
-    const start = getEventStart(event)
-    const end = getEventEnd(event)
-
-    const formattedStart = dateFormatter.format(start)
-    const formattedEnd = dateFormatter.format(end)
-
-    return formattedStart === formattedEnd
-      ? formattedStart
-      : `${formattedStart}–${formattedEnd}`
-  }
-
   const monthFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
   timeZone: 'America/New_York',

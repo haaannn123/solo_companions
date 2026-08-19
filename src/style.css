@@ -171,16 +171,14 @@ body {
   background: #d7ebe4;
 }
 
-@media (max-width: 600px) {
-  .contact {
-    padding: 3.5rem 1rem;
-  }
-
-  .contact-button {
-    width: 100%;
-    max-width: 300px;
-  }
+.desktop-calendar {
+  display: block;
 }
+
+.mobile-agenda {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .hero {
     min-height: 80svh;
@@ -199,14 +197,9 @@ body {
     line-height: 1.05;
   }
 
-  .hero-button {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-  }
-
-  .availability {
+  .availability,
+  .about,
+  .contact {
     padding: 3.5rem 1rem;
   }
 
@@ -215,39 +208,125 @@ body {
     line-height: 1.1;
   }
 
-  .availability-content > p:not(.eyebrow) {
+  .availability-content > p:not(.eyebrow),
+  .about-copy {
     font-size: 1rem;
   }
 
-  .calendar {
-    display: block;
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .about h2 {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .about-copy {
+    max-width: none;
+  }
+
+  .contact-button {
     width: 100%;
+    max-width: 300px;
   }
 
-  .calendar-frame {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0;
+  /* Show the custom agenda instead of the Google month view on phones. */
+  .desktop-calendar {
+    display: none;
   }
 
-  .about {
-  padding: 3.5rem 1rem;
-}
+  .mobile-agenda {
+    display: block;
+    margin-top: 2rem;
+    text-align: left;
+  }
 
-.about-content {
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
+  /* Give only the agenda interface a clean sans-serif font. */
+  .mobile-agenda,
+  .mobile-agenda * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-.about h2 {
-  font-size: clamp(2.8rem, 14vw, 4rem);
-}
+  .agenda-list {
+    display: grid;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-.about-copy {
-  max-width: none;
-  font-size: 1rem;
-}
+  .agenda-card {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr auto;
+    gap: 0.9rem;
+    align-items: center;
+    min-height: 4.6rem;
+    overflow: hidden;
+    border: 1px solid #ddd3c7;
+    border-radius: 0.7rem;
+    background: #fffdf9;
+    box-shadow: 0 2px 8px rgb(23 59 55 / 6%);
+  }
+
+  .agenda-date-box {
+    display: grid;
+    align-content: center;
+    gap: 0.15rem;
+    align-self: stretch;
+    padding: 0.5rem 0.35rem;
+    background: #f3eee7;
+    text-align: center;
+  }
+
+  .agenda-date-month {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .agenda-date-days {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .agenda-status {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  .is-available {
+    color: #27665d;
+  }
+
+  .is-drop-in {
+    color: #3476d6;
+  }
+
+  .is-unavailable {
+    color: #e91b04;
+  }
+
+  /* .agenda-arrow {
+    padding-right: 1rem;
+    color: #173b37;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1;
+  } */
+
+  .agenda-message {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid #ddd3c7;
+    border-radius: 0.7rem;
+    background: #fffdf9;
+    line-height: 1.5;
+  }
 }

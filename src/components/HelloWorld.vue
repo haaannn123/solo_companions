@@ -44,12 +44,6 @@
   timeZone: 'America/New_York',
   })
 
-  const monthYearFormatter = new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'America/New_York',
-  })
-
   function getEventDateParts(event: CalendarEvent) {
     const start = getEventStart(event)
     const end = getEventEnd(event)

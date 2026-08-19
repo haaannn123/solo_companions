@@ -179,6 +179,11 @@ body {
   display: none;
 }
 
+.mobile-view-toggle,
+.mobile-calendar-view {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .hero {
     min-height: 80svh;
@@ -244,9 +249,56 @@ body {
   }
 
   /* Give only the agenda interface a clean sans-serif font. */
+
   .mobile-agenda,
   .mobile-agenda * {
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  .mobile-view-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 200px;
+    margin: 2rem auto 0;
+    overflow: hidden;
+    border: 1px solid #b9b5ae;
+    border-radius: 0.5rem;
+  }
+
+  .view-toggle-button {
+    padding: 0.6rem 1rem;
+    border: 0;
+    background: #fffdf9;
+    color: #173b37;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.70rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .view-toggle-button + .view-toggle-button {
+    border-left: 1px solid #b9b5ae;
+  }
+
+  .view-toggle-button.is-active {
+    background: #173b37;
+    color: white;
+  }
+
+  .mobile-calendar-view {
+    display: block;
+    width: 100vw;
+    margin-top: 2rem;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .mobile-calendar {
+    display: block;
+    width: 100%;
+    height: 650px;
+    border-right: 0;
+    border-left: 0;
   }
 
   .agenda-list {
@@ -286,7 +338,7 @@ body {
   .agenda-date-box {
     display: grid;
     align-content: center;
-    gap: 0.15rem;
+    gap: 0.25rem;
     align-self: stretch;
     padding: 0.5rem 0.35rem;
     background: #f3eee7;
@@ -295,7 +347,7 @@ body {
 
   .agenda-date-month {
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.03em;
   }
 

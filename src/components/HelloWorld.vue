@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
+  import { computed , ref } from 'vue'
+
+  const mobileView = ref<'agenda' | 'calendar'>('agenda')
 
   import {
     useCalendarEvents,
@@ -116,6 +118,30 @@
       <p class="eyebrow">PET SITTING</p>
       <h2>My Pet Sitting Availability</h2>
       <p>View my current availability and plan your pet’s next stay.</p>
+      <div class="calendar-frame desktop-calendar"></div>
+      <div class="mobile-view-toggle" aria-label="Choose availability view">
+      <button
+        type="button"
+        class="view-toggle-button"
+        :class="{ 'is-active': mobileView === 'agenda' }"
+        :aria-pressed="mobileView === 'agenda'"
+        @click="mobileView = 'agenda'"
+      >
+        Agenda
+      </button>
+
+      <button
+        type="button"
+        class="view-toggle-button"
+        :class="{ 'is-active': mobileView === 'calendar' }"
+        :aria-pressed="mobileView === 'calendar'"
+        @click="mobileView = 'calendar'"
+      >
+        Calendar
+      </button>
+    </div>
+
+      
         <div class="calendar-frame desktop-calendar">
           <iframe
             class="calendar"
@@ -127,7 +153,7 @@
           ></iframe>
         </div>
 
-        <div class="mobile-agenda">
+        <div v-if="mobileView === 'agenda'" class="mobile-agenda">
           <p v-if="isLoading" class="agenda-message">
             Loading availability…
           </p>
@@ -165,6 +191,17 @@
               <!-- <span class="agenda-arrow" aria-hidden="true">›</span> -->
             </li>
           </ul>
+        </div>
+
+        <div v-else class="mobile-calendar-view">
+          <iframe
+            class="calendar mobile-calendar"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=MGU5Mjc4OWY1N2I5MGViMGQyZDc1YmRjZTYxYTIyMjhhZTM3OWUzODU3Y2Q1M2ZlODQ1NzQ3OTdjZTY5M2E3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4&color=%23aca0bd"
+            title="Solo Companions pet sitting availability"
+            height="650"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
         </div>
         
     </div>

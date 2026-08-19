@@ -182,6 +182,7 @@ body {
 .mobile-view-toggle,
 .mobile-calendar-view {
   display: none;
+
 }
 
 @media (max-width: 600px) {
@@ -260,7 +261,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 200px;
-    margin: 2rem auto 0;
+    margin: 0rem auto 0;
     overflow: hidden;
     border: 1px solid #b9b5ae;
     border-radius: 0.5rem;

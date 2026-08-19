@@ -78,6 +78,7 @@
 
     if (title.includes('available')) return 'is-available'
     if (title.includes('drop')) return 'is-drop-in'
+    if (title.includes('busy')) return 'is-busy'
 
     return 'is-unavailable'
   }
@@ -151,9 +152,15 @@
                 </span>
               </div>
 
-              <p class="agenda-status" :class="getEventTone(event)">
-                {{ event.summary || 'Unavailable' }}
-              </p>
+              <div class="agenda-copy">
+                <p class="agenda-status" :class="getEventTone(event)">
+                  {{ event.summary || 'Unavailable' }}
+                </p>
+
+                <p v-if="event.description" class="agenda-detail">
+                  {{ event.description }}
+                </p>
+              </div>
 
               <!-- <span class="agenda-arrow" aria-hidden="true">›</span> -->
             </li>

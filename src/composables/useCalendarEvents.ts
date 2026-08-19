@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 export interface CalendarEvent {
   id: string
   summary?: string
+  description?: string
   start: {
     date?: string
     dateTime?: string
